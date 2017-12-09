@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="GoogleMapsRoutePlanner.widget.GoogleMapsRoutePlanner" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+  <name>Google Maps Route Planner</name>
+    <description>Google Maps Route Planner</description>
+    <icon>
+
+	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	
+	
+	</icon>
+    <properties>
+        <property key="apiAccessKey" type="string" required="false">
+            <caption>Maps API Access Key</caption>
+            <category>Behavior</category>
+            <description>The Google Maps JavaScript API v3 does not require an API key to function correctly. If using the DistanceMatrix service, you will need an API key.</description>
+        </property>	
+        <property key="defaultLat" type="string" defaultValue="0.0">
+            <caption>Default latitude</caption>
+            <category>Behavior</category>
+            <description>Default latitude for the map to start at.</description> 
+        </property>
+        <property key="defaultLng" type="string" defaultValue="0.0">
+            <caption>Default longitude</caption>
+            <category>Behavior</category>
+            <description>Default longitude for the map to start at.</description> 
+        </property>
+        <property key="mapEntity" type="entity" required="true" allowNonPersistableEntities="true">
+            <caption>Object</caption>
+            <category>Data Source</category>
+            <description>The route object to show on the map.</description>
+        </property>
+        <property key="travelModeAttr" type="attribute" entityProperty="mapEntity" required="true" isPath="optional" pathType="reference">
+            <caption>Travel Mode Attribute</caption>
+            <category>Data Source</category>
+            <description>Defines the Travel mode</description>
+            <attributeTypes>
+                <attributeType name="Enum"/>
+            </attributeTypes>
+        </property>
+		<property key="addressFromAttr" type="attribute" entityProperty="mapEntity" required="false" isPath="optional" pathType="reference">
+            <caption>Address From</caption>
+            <category>Data Source</category>
+            <description>The address to start from. Only used if latitude and longitude are empty. Will then be set after determining route based on geocoding of lat and long.</description> 
+			<attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
+        </property>
+		<property key="wayPointsArrayStringAttr" type="attribute" entityProperty="mapEntity" required="false" isPath="optional" pathType="reference">
+            <caption>Waypoints Array String</caption>
+            <category>Data Source - WayPoints</category>
+            <description>Optionally add pipeline delimited waypoints to the route. Not applicable for TRANSIT mode.</description> 
+			<attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
+        </property>
+		<property key="latitudeAttr" type="attribute" entityProperty="mapEntity" required="false" isPath="optional" pathType="reference">
+            <caption>Latitude From</caption>
+            <category>Data Source</category>
+            <description>The latitude to start from. Is set together with longitude, this will overrule the Address From field and trigger setting the Address From based on geocoding of lat and long.</description> 
+			<attributeTypes>
+                <attributeType name="Decimal"/>
+            </attributeTypes>
+        </property>
+		<property key="longitudeAttr" type="attribute" entityProperty="mapEntity" required="false" isPath="optional" pathType="reference">
+            <caption>Longitude From</caption>
+            <category>Data Source</category>
+            <description>The longitude to start from</description> 
+			<attributeTypes>
+                <attributeType name="Decimal"/>
+            </attributeTypes>
+        </property>
+		<property key="addressToAttr" type="attribute" entityProperty="mapEntity" required="false" isPath="optional" pathType="reference">
+            <caption>Address To</caption>
+            <category>Data Source</category>
+            <description>The address to go to</description> 
+			<attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
+        </property>
+		<property key="arrivalTimeAttr" type="attribute" entityProperty="mapEntity" required="false" isPath="optional" pathType="reference">
+            <caption>Arrival Time</caption>
+            <category>Data Source</category>
+            <description>The required arrival time attribute If arrival time is set, departure time will not be used and actually set, based on arrival time - duration.</description> 
+			<attributeTypes>
+                <attributeType name="DateTime"/>
+            </attributeTypes>
+        </property>
+		<property key="departureTimeAttr" type="attribute" entityProperty="mapEntity" required="false" isPath="optional" pathType="reference">
+            <caption>Departure Time</caption>
+            <category>Data Source</category>
+            <description>The required departure time attribute.</description> 
+			<attributeTypes>
+                <attributeType name="DateTime"/>
+            </attributeTypes>
+        </property>
+		<property key="avoidHighwaysAttr" type="attribute" entityProperty="mapEntity" required="false" isPath="optional" pathType="reference">
+            <caption>Avoid Highways</caption>
+            <category>Data Source</category>
+            <description>Specify whether highways should be avoided or not when determining the best route.</description> 
+			<attributeTypes>
+                <attributeType name="Boolean"/>
+            </attributeTypes>
+        </property>
+		<property key="avoidFerriesAttr" type="attribute" entityProperty="mapEntity" required="false" isPath="optional" pathType="reference">
+            <caption>Avoid Ferries</caption>
+            <category>Data Source</category>
+            <description>Specify whether ferries should be avoided or not when determining the best route.</description> 
+			<attributeTypes>
+                <attributeType name="Boolean"/>
+            </attributeTypes>
+        </property>
+		<property key="avoidTollsAttr" type="attribute" entityProperty="mapEntity" required="false" isPath="optional" pathType="reference">
+            <caption>Avoid Tolls</caption>
+            <category>Data Source</category>
+            <description>Specify whether tolls should be avoided or not when determining the best route.</description> 
+			<attributeTypes>
+                <attributeType name="Boolean"/>
+            </attributeTypes>
+        </property>
+		<property key="durationAttr" type="attribute" entityProperty="mapEntity" required="true" isPath="optional" pathType="reference">
+            <caption>Duration</caption>
+            <category>Data Source</category>
+            <description>The duration for the selected route will be set in this attribute.</description> 
+			<attributeTypes>
+                <attributeType name="Integer"/>
+            </attributeTypes>
+        </property>
+		<property key="distanceAttr" type="attribute" entityProperty="mapEntity" required="true" isPath="optional" pathType="reference">
+            <caption>Distance</caption>
+            <category>Data Source</category>
+            <description>The distance for the selected route will be set in this attribute.</description> 
+			<attributeTypes>
+                <attributeType name="Integer"/>
+            </attributeTypes>
+        </property>
+        <property key="xpathConstraint" type="entityConstraint" entityProperty="mapEntity" required="false">
+            <caption>XPath Constraint</caption>
+            <category>Data Source</category>
+            <description>The XPath constraint if retrieving the route from database.</description> 
+        </property>
+        <property key="mapHeight" type="integer" defaultValue="350">
+            <caption>Height</caption>
+            <category>Appearance</category>
+            <description>The map's height in px.</description> 
+        </property>
+        <property key="mapWidth" type="string" defaultValue="100%">
+            <caption>Width</caption>
+            <category>Appearance</category>
+            <description>The map's width in px or percent.</description> 
+        </property>
+		<property key="borderColor" type="string" required="false" defaultValue="">
+            <caption>Border Color</caption>
+            <category>Appearance</category>
+            <description>The border color around the Google Map.</description>
+        </property>
+        <property key="lowestZoom" type="integer" defaultValue="15">
+            <caption>Single item zoom level</caption>
+            <category>Behavior</category>
+            <description>The zoom level used when displaying a single item. 1 is the whole world, 15 is city level, 20 is house level.</description> 
+        </property>
+        <!-- Map CONTROLS -->
+        <property key="opt_drag" type="boolean" defaultValue="true">
+            <caption>Drag</caption>
+            <category>Map controls</category>
+            <description>Enable/disable dragging a map using the mouse</description>
+        </property>
+        <property key="opt_mapcontrol" type="boolean" defaultValue="true">
+            <caption>Type</caption>
+            <category>Map controls</category>
+            <description>Enable/disable Map Type control</description>
+        </property>
+        <property key="opt_scroll" type="boolean" defaultValue="true">
+            <caption>Scroll</caption>
+            <category>Map controls</category>
+            <description>Enable/disable using the scrollwheel to zoom in/out</description>
+        </property>
+        <property key="opt_streetview" type="boolean" defaultValue="true">
+            <caption>Streetview</caption>
+            <category>Map controls</category>
+            <description>Enable/disable Streetview control</description>
+        </property>
+        <property key="opt_zoomcontrol" type="boolean" defaultValue="true">
+            <caption>Zoom Control</caption>
+            <category>Map controls</category>
+            <description>Enable/disable Zoom control</description>
+        </property>
+        <property key="opt_tilt" type="enumeration" defaultValue="d0">
+            <caption>Tilt</caption>
+            <category>Map controls</category>
+            <description>Angle of the map. This can be set to 45 degrees, if this is available for some locations and only when using type Satellite or Hybrid. It will automatically switch to 0 degrees if it is not available.</description>
+            <enumerationValues>
+                <enumerationValue key="d0">0</enumerationValue>
+                <enumerationValue key="d45">45</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="defaultMapType" type="enumeration" defaultValue="ROADMAP">
+            <caption>Maptype</caption>
+            <category>Appearance</category>
+            <description>Set the default map type</description>
+            <enumerationValues>
+                <enumerationValue key="ROADMAP">Roadmap</enumerationValue>
+                <enumerationValue key="SATELLITE">Satellite</enumerationValue>
+                <enumerationValue key="HYBRID">Hybrid</enumerationValue>
+                <enumerationValue key="TERRAIN">Terrain</enumerationValue>
+            </enumerationValues>
+        </property>
+        <!-- CUSTOMISATION -->
+        <property key="styleArray" type="string" multiline="true" required="false">
+            <caption>Style Array</caption>
+            <category>Customisation</category>
+            <description>Use this to add custom styles to your maps.</description>
+        </property>
+        <property key="consoleLogging" type="boolean" defaultValue="false">
+            <caption>Logging</caption>
+            <category>Console</category>
+            <description>For debugging purposes. 
+			
+			If set to true the widget will add a console.dir (whole object) and console.log (coordinates) for every object retrieved from the database. The results can be checked in the browser itself in the console tab.</description> 
+        </property>
+        <property key="showProgress" type="boolean" defaultValue="true">
+            <caption>Show a progress bar when loading</caption>
+            <category>Loader</category>
+            <description>If the map has a lot of markers to load, it can appear unresponsive. This progress bar will tell the user it is loading the markers</description>
+        </property>
+        <property key="progressMessage" type="translatableString" required="false">
+            <caption>Loading message</caption>
+            <category>Loader</category>
+            <description>The message that appears in the progress bar</description>
+        </property>
+    </properties>
+</widget>
+
