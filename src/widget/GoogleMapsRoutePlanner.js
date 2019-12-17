@@ -1,12 +1,12 @@
-/*
+/**
 
     GoogleMapsRoutePlanner
     ========================
 
     @file      : GoogleMapsRoutePlanner.js
-    @version   : 0.0.1
+    @version   : 1.1.0
     @author    : Ivo Sturm
-    @date      : 17-11-2017
+    @date      : 17-12-2019
     @copyright : First Consulting
     @license   : Apache v2
 
@@ -15,6 +15,8 @@
 	
 	Releases
 	========================
+	v1.0.0	17-11-2017	Initial Release in Mendix 6.10.10
+	v1.1.0	17-12-2019	Upgraded to Mendix 8.2.2. Removed Resize function content. Cleaned up code slightly.
 
 
 */
@@ -40,8 +42,6 @@ define([
 		
 		_progressID: null,
 		_markersArr: [],
-		_objects: [],
-		_markerClusterer		: null,
 		_handle: null,
         _contextObj: null,
         _googleMap: null,
@@ -53,7 +53,6 @@ define([
 		_schema : [],
 		_infowindow: null,
 		_logNode: 'GoogleMapsRoutePlanner widget: ',
-		_resizeTimer: null,
 
         postCreate: function () {
 		
@@ -111,18 +110,7 @@ define([
             }
         },
         resize: function (box) {
-            if (this._googleMap) {
-                if (this._resizeTimer) {
-                    clearTimeout(this._resizeTimer);
-                }
-                this._resizeTimer = setTimeout(lang.hitch(this, function () {
-                    //logger.debug(this.id + ".resize");
-                    google.maps.event.trigger(this._googleMap, "resize");
-                    /*if (this.gotocontext) {
-                        this._goToContext();
-                    }*/
-                }), 250);
-            }
+
         },
        _waitForGoogleLoad: function (callback) {
             logger.debug(this.id + "._waitForGoogleLoad");
@@ -175,7 +163,7 @@ define([
 			this.directionsService = new google.maps.DirectionsService();
 			this.directionsDisplay = new google.maps.DirectionsRenderer();	
 			
-			this.distanceMatrixService = new google.maps.DistanceMatrixService;		
+			this.distanceMatrixService = new google.maps.DistanceMatrixService();		
 			
             domStyle.set(this.routeContainer, {
                 height: this.mapHeight + 'px',
@@ -254,9 +242,7 @@ define([
 			var bounds = new google.maps.LatLngBounds();
             var panPosition = this._defaultPosition;
             var validCount = 0;
-			var valueOfLat = null,
-			valueOfLng = null,
-			transitOpts = {
+			var transitOpts = {
 				arrivalTime: arrivalDate,
 				departureTime: departureDate//,
 				//modes: [transitMode1, transitMode2]
@@ -273,13 +259,13 @@ define([
 			}
 			// waypoints are only allowed when not in TRANSIT mode. Give error if negative scenario occurs
 			if (objs[0].travelMode === 'TRANSIT' && wayPointsArray.length > 0){
-				console.error(this._logNode + " waypoints are not allowed in TRANSIT mode. Only for DRIVING, WALKING, BICYCLING.")
+				console.error(this._logNode + " waypoints are not allowed in TRANSIT mode. Only for DRIVING, WALKING, BICYCLING.");
 			} else {
 				for (var f = 0 ; f < wayPointsArray.length ; f++){
 					var wayPoint = {
 						location : wayPointsArray[f],
 						stopover : true
-					}
+					};
 					this.wayPoints.push(wayPoint);
 					// add waypoints in order
 					this.destinationsArray.push(wayPointsArray[f]);
@@ -424,7 +410,7 @@ define([
 						references	: this._refs
 					},
                     callback: dojo.hitch(this, function(result){
-						this.parseObjects(result)
+						this.parseObjects(result);
 					})
                 });
             } else if (!this._contextObj && (xpath.indexOf('[%CurrentObject%]') > -1)) {
@@ -437,7 +423,7 @@ define([
 						references	: this._refs
 					},
                     callback:  dojo.hitch(this, function(result){
-						this.parseObjects(result)
+						this.parseObjects(result);
 					})
                 });
             }
@@ -460,8 +446,6 @@ define([
 			}
 		}, 
 		parseObjects : function (objs) {
-
-			this._objects = objs;
 
 			var newObjs = [];
 			for (var i = 0; i < objs.length; i++) {
