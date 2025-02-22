@@ -5,7 +5,7 @@
             <widgetFile path="GoogleMapsRoutePlanner.xml"/>
         </widgetFiles>
         <files>
-            <file path="valcon/GoogleMapsRoutePlanner"/>
+            <file path="valcon/googlemapsrouteplanner"/>
         </files>
     </clientModule>
 </package>

@@ -1,6 +1,6 @@
 {
   "name": "googlemapsrouteplanner",
-  "widgetName": "googlemapsrouteplanner",
+  "widgetName": "GoogleMapsRoutePlanner",
   "version": "2.0.0",
   "description": "A Google Maps based route plannner widget for Mendix",
   "copyright": "Apache v2",

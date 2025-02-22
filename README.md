@@ -17,7 +17,7 @@ This widget uses React / TypeScript and the new pluggable widgets API. Additiona
 	* Production: If you want to use the widget in Production a valid Google Maps API key needs to be entered in every widget instance. 
 	* Development: Developing can be done without an API key, but will show messages on top of the Google Map, making it unusable in Production.
 
-* Add the Google Maps Route Planner widget to your page, see screenshots for Settings in Studio Pro or even better download the demo project avaulable here: 
+* Add the Google Maps Route Planner widget to your page, see screenshots for Settings in Studio Pro or even better download the demo project available here: 
 
 * At least configure all attributes in the Data source tab
 
