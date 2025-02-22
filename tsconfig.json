@@ -1,0 +1,17 @@
+{
+  "extends": "./node_modules/@mendix/pluggable-widgets-tools/configs/tsconfig.base.json"  ,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "./",
+    "jsxFragmentFactory": "Fragment",
+	"types": ["react", "jest"],
+    "target": "es5",
+    "lib": [ "es2016", "dom" ],
+	"jsx": "react",
+	"esModuleInterop": true
+  },
+  "exclude": [
+    "dist/",
+    "node_modules/"
+  ]
+}
